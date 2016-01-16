@@ -11,3 +11,29 @@
 input[type=checkbox] {
     display: none;
 }
+
+.first {
+  min-height: 65%;
+  width: 100%;
+}
+
+.second {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.first input[type="button"],
+.second input[type="button"] {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  width: 100%;
+  padding-left: 0px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  line-height: 25px;
+}

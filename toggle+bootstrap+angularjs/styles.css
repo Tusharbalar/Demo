@@ -74,6 +74,7 @@ body {
 }
 .portfolio {
     background-color: #e5e4d7;
+    min-height: 75%;
     padding: 20px;
     font-size: 110%;
     border-radius: 5px;
@@ -87,6 +88,7 @@ body {
     display: block;
     box-sizing: border-box;
     background-color: #e5e4d7;
+    min-height: 75%;
     margin-right: 10px;
     border-radius: 5px;
     padding: 20px;
