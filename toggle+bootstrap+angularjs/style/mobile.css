@@ -1,0 +1,88 @@
+/*@media (min-width:320px) and (max-width:568px){
+  .portfolio,
+  .sidebar-left {
+    height: 54%;
+    min-height: 54%;
+  }
+}*/
+@media (max-width:767px) {
+  body {
+    font-size: smaller;
+  }
+
+  .sidebar-left {
+    width: 160px;
+    height: 73%;
+    min-height: 73%;
+  }
+  .portfolio {
+    height: 73%;
+    min-height: 73%;
+  }
+  #header h2 {
+      text-align: center;
+      margin-top: 5px;
+      padding: 2.5px;
+      font-family: cursive;
+      color: rgba(156, 64, 158, 0.94);
+  }
+  #navbar {
+      margin-bottom: 5px;
+      margin-top: 60px;
+  }
+  #navbar h2 {
+      text-align: left;
+      padding: 10px;
+      color: #062346;
+      font-size: 20px;
+  }
+  .SetToggle {
+    font-size: 20px;
+    margin-top: 12px;
+    margin-left: 7px;
+    margin-right: 10px;
+  }
+  #footer {
+    margin: 5px;
+    margin-left: -5px;
+    position: relative;
+  }
+  #footer p {
+      text-align: center;
+      padding: 8px;
+      margin-bottom: 0px;
+  }
+  .content-wrapper {
+    min-height: 73%;
+  }
+}
+
+@media (min-width:768px) and (max-width:992px) {
+  .sidebar-left {
+    min-height: 81%;
+  }
+  .portfolio {
+    min-height: 81%;
+  }
+  #footer {
+      margin: 5px;
+      left: 8px;
+      right: 8px;
+      bottom: 2px;
+  }
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+  /*.sidebar-left {
+    min-height: 75%;
+  }
+  .portfolio {
+    min-height: 75%;
+  }*/
+  #footer {
+      margin: 5px;
+      left: 8px;
+      right: 8px;
+      bottom: 1px;
+  }
+}
