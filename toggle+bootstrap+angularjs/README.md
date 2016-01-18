@@ -1,6 +1,6 @@
 ########################################################
   How to run:
-  
+
   Go to your project directory,
   and type "http-server",
   then press enter key
