@@ -2,13 +2,18 @@
   
   var app = angular.module("app.controllers", ["app.service"]);
 
-  app.controller("myCtrl", ["$scope", "$http", "$timeout", "surveyService",
+  app.controller("myCtrl", ["$scope", "$http", "$location", "$timeout", "surveyService",
 
-    function ($scope, $http, $timeout, surveyService) {
+    function ($scope, $http, $location, $timeout, surveyService) {
       
       surveyService.getData(function(dataResponse) {
-        console.log("SASASa", dataResponse)
+        $scope.surveys = dataResponse;
       });
       
+      $scope.a = function(){
+        $location.path("/home")
+      }
+      
     }]);
+    
 })();

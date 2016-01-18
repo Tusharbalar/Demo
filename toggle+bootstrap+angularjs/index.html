@@ -46,19 +46,14 @@
             </ul>
           </div>
           <div class="second">
-            <input type="button" value="edit" name="edit">
+            <input type="button" value="edit" name="edit" ng-click="a()">
           </div>
         </div>
         <div class="portfolio">
-          <h1>Hello World</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Praesent tincidunt non nulla in ullamcorper. Nulla lacinia, magna ac iaculis sodales, elit odio sagittis nisl, vel egestas sem quam sit amet leo. Maecenas pellentesque porta cursus. In ornare, diam eget maximus fermentum, felis lacus bibendum nunc, aliquam egestas dui ligula ut ante.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Praesent tincidunt non nulla in ullamcorper. Nulla lacinia, magna ac iaculis sodales, elit odio sagittis nisl, vel egestas sem quam sit amet leo. Maecenas pellentesque porta cursus. In ornare, diam eget maximus fermentum, felis lacus bibendum nunc, aliquam egestas dui ligula ut ante.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Praesent tincidunt non nulla in ullamcorper. Nulla lacinia, magna ac iaculis sodales, elit odio sagittis nisl, vel egestas sem quam sit amet leo. Maecenas pellentesque porta cursus. In ornare, diam eget maximus fermentum, felis lacus bibendum nunc, aliquam egestas dui ligula ut ante.</p>
-          <h2>Hello World</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Praesent tincidunt non nulla in ullamcorper. Nulla lacinia, magna ac iaculis sodales, elit odio sagittis nisl, vel egestas sem quam sit amet leo. Maecenas pellentesque porta cursus. In ornare, diam eget maximus fermentum, felis lacus bibendum nunc, aliquam egestas dui ligula ut ante.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Praesent tincidunt non nulla in ullamcorper. Nulla lacinia, magna ac iaculis sodales, elit odio sagittis nisl, vel egestas sem quam sit amet leo. Maecenas pellentesque porta cursus. In ornare, diam eget maximus fermentum, felis lacus bibendum nunc, aliquam egestas dui ligula ut ante.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Praesent tincidunt non nulla in ullamcorper. Nulla lacinia, magna ac iaculis sodales, elit odio sagittis nisl, vel egestas sem quam sit amet leo. Maecenas pellentesque porta cursus. In ornare, diam eget maximus fermentum, felis lacus bibendum nunc, aliquam egestas dui ligula ut ante.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra mauris nec sem condimentum pellentesque. Praesent tincidunt non nulla in ullamcorper. Nulla lacinia, magna ac iaculis sodales, elit odio sagittis nisl, vel egestas sem quam sit amet leo. Maecenas pellentesque porta cursus. In ornare, diam eget maximus fermentum, felis lacus bibendum nunc, aliquam egestas dui ligula ut ante.</p>
+          <div id="main">
+              <div ng-view></div>
+          </div>
+            
         </div>
       </div>
       <div id="footer">
@@ -67,7 +62,8 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
-    <script src="libs/jquery.min.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/jquery/jquery.min.js"></script>
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="controllers/app.js"></script>
     <script src="controllers/controllers.js"></script>
