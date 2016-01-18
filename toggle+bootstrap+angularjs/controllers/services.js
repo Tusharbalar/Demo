@@ -7,11 +7,14 @@
       this.getData = function (callbackFunc) {
         $http({
             method: "GET",
+            data: {something: true},
+            contentType: 'application/json',
+            dataType: 'jsonp',
             url: "http://localhost:8080/TheSanshaWorld/sfcms/fetch-survey-details"
           }).success(function(data){
             callbackFunc(data);
         }).error(function(){
-            alert("error");
+           alert("error");
         });
       };
 
@@ -21,7 +24,7 @@
             window.open("../index.html","_self");
           });
          } else {
-            return false;
+           return false;
          }
       };
 
