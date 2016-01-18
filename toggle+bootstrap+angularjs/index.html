@@ -21,39 +21,39 @@
           <label for="slide-sidebar"><span class="glyphicon glyphicon-menu-hamburger"></span></label>
         </div>
         <div class="setQuestion">
-          <h2>Set Your Question</h2>
+          <h2>{{surveys[index].questionTitle}}</h2>
         </div>
       </div>
       <div class="content-wrapper" class="container-fluid">
         <div class="sidebar-left">
           <div class="first">
-            <ul>
-              <li>
-                <input type="button" value="submit" name="submit">
+            <ul ng-repeat="cat in surveys[index].category" class="list-unstyled" ng-hide="checkSubCategoryValueIsNull.length">
+              <li class="category">
+                <a ng-click="expand=!expand">
+                  <span class="glyphicon" ng-class="{'glyphicon-plus': !expand, 'glyphicon-minus': expand}">
+                    {{cat.categoryName}}
+                  </span>
+                </a>
               </li>
-              <li>
-                <input type="button" value="submit" name="submit">
-              </li>
-              <li>
-                <input type="button" value="submit" name="submit">
-              </li>
-              <li>
-                <input type="button" value="submit" name="submit">
-              </li>
-              <li>
-                <input type="button" value="submit" name="submit">
-              </li>
+              <ul ng-repeat="subcategory in cat.categoryItemDto" class="list-unstyled">
+                <li ng-show="expand">
+                  <label class="label-style-change">
+                    <input type="checkbox" ng-click="toggleSelectionCheckbox(surveys[index], subcategory)" ng-model="subcategory.selectValue" ng-disabled="disableCheckbox">
+                    <span class="subcategory-item" ng-disabled="disableCheckbox">{{subcategory.subCategoryName}}</span>
+                  </label>
+                </li>
+              </ul>
             </ul>
           </div>
           <div class="second">
-            <input type="button" value="edit" name="edit" ng-click="a()">
+            <input type="button" name="Submit" value="Submit" ng-click="submitSelection()" ng-hide="hideSubmitButton" ng-disabled="!selections[index].length">
+            <input type="button" name="Edit" value="Edit" ng-click="EditSelection()" ng-show="hideEditButton">
           </div>
         </div>
         <div class="portfolio">
           <div id="main">
               <div ng-view></div>
           </div>
-            
         </div>
       </div>
       <div id="footer">
@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
     <script src="libs/angular-route/angular-route.js"></script>
     <script src="libs/jquery/jquery.min.js"></script>
     <script src="libs/bootstrap/js/bootstrap.min.js"></script>
