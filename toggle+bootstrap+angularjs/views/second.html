@@ -1,1 +1,35 @@
-<h1>Hello</h1>
+<div class="col-lg-offset-1 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+  <h2 class="subCategoryLabel"><span class="label">{{isQuestionTrue[inc].categoryName}}</span></h2>
+</div>
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    <button class="btnNext" ng-hide="inc == 0" ng-click="prev()">
+      <i class="glyphicon glyphicon-menu-left"></i>
+    </button>
+    <button class="btnNext" ng-show="inc == 0" ng-click="previousQuestion()">
+      <i class="glyphicon glyphicon-backward"></i>
+    </button>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    <form name="myForm">
+      <div ng-repeat="item in surveys[index].optionCategoryItemDto" class="formStyle">
+        <label class="text-center">
+          <input type="radio" name="radio" id="{{item.itemId}}" ng-value="item.itemId" ng-model="selections[index][inc].answer" required> {{item.itemName}}
+        </label>
+      </div>
+      <br/>
+      <br/>
+    </form>
+  </div>
+  <div class="col-lg-3 col-lg-offset-1 col-md-offset-1 col-md-3 col-sm-4 col-xs-4">
+    <button class="btnNext" ng-hide="isQuestionTrue.length == inc + 1" ng-disabled="myForm.radio.$error.required" ng-click="next()">
+      <i class="glyphicon glyphicon-menu-right"></i>
+    </button>
+    <button class="btnNext" ng-show="isQuestionTrue.length == inc + 1" ng-disabled="myForm.radio.$error.required" ng-click="nextQuestion()">
+      <i class="glyphicon glyphicon-forward"></i>
+    </button>
+  </div>
+</div>
+<div class="col-lg-offset-3 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-4">
+  <textarea type="text" id="text" class="form-control txtArea" ng-model="selections[index][inc].comment" placeholder="Write comment..."></textarea>
+</div>

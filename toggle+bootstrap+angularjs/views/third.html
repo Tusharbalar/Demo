@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    <button class="btnNext" ng-click="previousQuestion()" ng-show="inc == 0">
+      <i class="glyphicon glyphicon-backward"></i>
+    </button>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    <form name="myForm">
+      <!--<div ng-hide="surveys[index].questionType == 2">-->
+        <div ng-repeat="item in surveys[index].optionCategoryItemDto" class="formStyle">
+          <label class="text-center" style="cursor:pointer">
+            <input type="radio" name="radio" id="{{item.itemId}}" ng-value="item.itemId" ng-model="selections[index][inc].answer"
+              ng-change="onlyRadioButtonGetQuestionId(surveys[index], item)" required> {{item.itemName}}
+          </label>
+        </div>
+      <!--</div>-->
+      <br/>
+      <br/>
+    </form>
+  </div>
+  <div class="col-lg-3 col-lg-offset-1 col-md-offset-1 col-md-3 col-sm-4 col-xs-4">
+    <button class="btnNext" ng-click="nextQuestion()" ng-disabled="myForm.radio.$error.required && !(surveys[index].questionType == 2)">
+      <i class="glyphicon glyphicon-forward"></i>
+      </button>
+  </div>
+</div>
+<div class="col-lg-offset-3 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-4">
+  <textarea type="text" id="text" class="form-control txtArea" ng-model="selections[index][inc].comment" placeholder="Write comment..."></textarea>
+</div>

@@ -30,4 +30,21 @@
 
     });
 
+      app.factory('Data', function () {
+
+        var data = {
+            Index: ''
+        };
+        
+        return {
+            getIndex: function () {
+                return data.Index;
+            },
+            setIndex: function (index) {
+                data.Index = index;
+                console.log("service", data.Index)
+            }
+         };
+      });
+    
 })();

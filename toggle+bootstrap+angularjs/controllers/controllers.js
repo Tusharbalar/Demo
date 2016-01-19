@@ -2,12 +2,12 @@
   
   var app = angular.module("app.controllers", ["app.service"]);
 
-  app.controller("myCtrl", ["$scope", "$http", "$location", "$timeout", "surveyService",
+  app.controller("myCtrl", ["$scope", "$http", "$location", "$timeout", "surveyService", "Data",
 
-    function ($scope, $http, $location, $timeout, surveyService) {
+    function ($scope, $http, $location, $timeout, surveyService, Data) {
       
       surveyService.getData(function(dataResponse) {
-                  
+          
           $scope.surveys = dataResponse;
 
           $scope.selections = [];
@@ -19,7 +19,6 @@
           };
 
           $scope.index = 0;
-
           var toggleCheckboxFlag = 0;
 
           /* PRIVATE FUNCTION
@@ -54,10 +53,9 @@
             $scope.hideSubmitButton = true;
             $scope.disableCheckbox = true;
             $scope.hideEditButton = true;
-
-            // var param = $scope.index + 1;
             $location.path("/question/1");
           }
+
       });
       
         $scope.EditSelection = function() {
@@ -67,7 +65,16 @@
           $scope.disableCheckbox = false;
           $scope.value = false;
         }
-      
+        
+        $scope.$on('eventName', function (event, args) {
+          $scope.index = args.message;
+        });
+        
+      //   $scope.$watch('index', function (newValue, oldValue) {
+          
+      //       if (newValue !== oldValue) Data.setIndex(newValue);
+      //   });
+      // console.log("controller", Data.getIndex())
     }]);
     
 })();
