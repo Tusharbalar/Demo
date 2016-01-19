@@ -23,6 +23,12 @@
 .first ul li a span {
   width: 100%;
   cursor: pointer;
+  color: #002953;
+  font-size: 18px;
+}
+
+.first ul li a span:hover {
+  color: #68A4FF;
 }
 
 .second {
@@ -53,4 +59,15 @@
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+}
+
+.btnNext i {
+  font-size: 100px;
+  color: rgba(1, 11, 11, 0.65);
+}
+
+.btnNext {
+  background: rgba(75, 93, 111, 0);
+  border: none;
+  margin: 20px;
 }

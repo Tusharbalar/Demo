@@ -7,7 +7,8 @@
     function ($scope, $http, $location, $timeout, surveyService) {
       
       surveyService.getData(function(dataResponse) {
-                  $scope.surveys = dataResponse;
+                  
+          $scope.surveys = dataResponse;
 
           $scope.selections = [];
 
@@ -53,16 +54,19 @@
             $scope.hideSubmitButton = true;
             $scope.disableCheckbox = true;
             $scope.hideEditButton = true;
-            
-            var param = $scope.index+1;
-            $location.path("/question/" + param);
-          }
 
+            // var param = $scope.index + 1;
+            $location.path("/question/1");
+          }
       });
       
-      $scope.a = function(){
-        $location.path("/home")
-      }
+        $scope.EditSelection = function() {
+
+          $scope.hideEditButton = false;
+          $scope.hideSubmitButton = false;
+          $scope.disableCheckbox = false;
+          $scope.value = false;
+        }
       
     }]);
     
