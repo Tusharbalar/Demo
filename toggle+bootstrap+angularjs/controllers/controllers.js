@@ -14,10 +14,11 @@
 
           /* create 2d array mannually */
           var numInternalArrays = $scope.surveys.length;
+          $scope.prevFlag = [numInternalArrays];
           for (var i = 0; i < numInternalArrays; i++) {
             $scope.selections[i] = [];
+            $scope.prevFlag[i] = 0;
           };
-
           $scope.index = 0;
           var toggleCheckboxFlag = 0;
 
@@ -69,12 +70,7 @@
         $scope.$on('eventName', function (event, args) {
           $scope.index = args.message;
         });
-        
-      //   $scope.$watch('index', function (newValue, oldValue) {
-          
-      //       if (newValue !== oldValue) Data.setIndex(newValue);
-      //   });
-      // console.log("controller", Data.getIndex())
+
     }]);
     
 })();

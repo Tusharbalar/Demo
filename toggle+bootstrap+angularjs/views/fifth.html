@@ -1,8 +1,6 @@
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-    <button class="btnNext" ng-click="previousQuestion()" ng-show="inc == 0">
-      <i class="glyphicon glyphicon-backward"></i>
-    </button>
+    <button class="btnNext" ng-click="previousQuestion()" ng-show="inc == 0"><i class="glyphicon glyphicon-backward"></i></button>
   </div>
   <div class="col-lg-3 col-lg-offset-1 col-md-offset-1 col-md-3 col-sm-4 col-xs-4">
     <button class="btnNext" ng-click="nextQuestion()" ng-disabled="myForm.radio.$error.required && !(surveys[index].questionType == 2)">

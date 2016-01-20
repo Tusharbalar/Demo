@@ -19,12 +19,7 @@
         $location.path("/question/2");
         $scope.$emit('eventName', { message: $scope.index });
       }
-   
-      //  $scope.$watch('index', function (newValue, oldValue) {
-      //    console.log("SASAS", newValue)
-      //     if (newValue !== oldValue) Data.setIndex(newValue);
-      // });
-  
+
    }]);
    
 })();

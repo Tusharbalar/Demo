@@ -6,8 +6,6 @@
 
     $scope.inc = 0;
 
-    console.log("ssss", $scope.surveys, $scope.index);
-
     if ($scope.surveys[$scope.index] === undefined) return;
 
     if ($scope.surveys[$scope.index].category) {
@@ -23,18 +21,21 @@
       }
     });
 
-    angular.forEach($scope.isQuestionTrue, function(value, key) {
-      for(var i = 2 ; i < $scope.isQuestionTrue.length ; i++) {
-        $scope.selections[$scope.index].push({
-          questionId: $scope.surveys[$scope.index].questionId,
-          categoryId: value.categoryId,
-          categoryName: value.categoryName,
-          answer: "",
-          storeId: 1,
-          comment: ""
-        });
-      }
-    });
+    if ($scope.prevFlag[$scope.index] === 0) {
+      angular.forEach($scope.isQuestionTrue, function(value, key) {
+        for(var i = 2 ; i < $scope.isQuestionTrue.length ; i++) {
+          $scope.selections[$scope.index].push({
+            questionId: $scope.surveys[$scope.index].questionId,
+            categoryId: value.categoryId,
+            categoryName: value.categoryName,
+            answer: "",
+            storeId: 1,
+            comment: ""
+          });
+        }
+      });
+      $scope.prevFlag[$scope.index] = 1;
+    }
 
     $scope.next = function() {
       $scope.inc += 1;
@@ -45,12 +46,17 @@
     }
 
     $scope.nextQuestion = function() {
-      console.log("AAA", $scope.selections)
       $scope.index += 1;
       $location.path("/question/3");
       $scope.$emit('eventName', { message: $scope.index });
     }
-    
+
+    $scope.previousQuestion = function() {
+      $scope.index -= 1;
+      $location.path("/question/1");
+      $scope.$emit('eventName', { message: $scope.index });
+    }
+
   }]);
    
 })();

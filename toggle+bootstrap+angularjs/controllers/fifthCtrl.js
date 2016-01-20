@@ -6,18 +6,26 @@
       
         $scope.inc = 0;
       
-        $scope.selections[$scope.index].push({
-          questionId: $scope.surveys[$scope.index].questionId,
-          categoryId: $scope.surveys[$scope.index].categoryId,
-          categoryName: "",
-          comment: "",
-          answer: "",
-          storeId: 1
-        });
+        if ($scope.prevFlag[$scope.index] === 0) {
+          $scope.selections[$scope.index].push({
+            questionId: $scope.surveys[$scope.index].questionId,
+            categoryId: $scope.surveys[$scope.index].categoryId,
+            categoryName: "",
+            comment: "",
+            answer: "",
+            storeId: 1
+          });
+          $scope.prevFlag[$scope.index] = 1;
+        }
       
         $scope.nextQuestion = function() {
-          console.log("AAA", $scope.selections)
           $location.path("/contact");
+        }
+
+        $scope.previousQuestion = function() {
+          $scope.index -= 1;
+          $location.path("/question/4");
+          $scope.$emit('eventName', { message: $scope.index });
         }
 
     }]);
