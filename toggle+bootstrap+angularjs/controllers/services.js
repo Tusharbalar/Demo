@@ -21,7 +21,7 @@
       this.setData = function(value) {
         if (confirm('Do you wanna to submit?')) {
           $http.post("http://localhost:8080/TheSanshaWorld/sfcms/save-survey-result-data", value).success(function(data, status) {
-            window.open("../index.html","_self");
+            window.open("index.html","_self");
           });
          } else {
            return false;

@@ -2,9 +2,14 @@
    
     var app = angular.module("app.controllers");
 
-    app.controller("thirdCtrl", ['$scope', "$location", "Data", function($scope, $location, Data) {
+    app.controller("thirdCtrl", ["$scope", "$location", "Data", function($scope, $location, Data) {
 
         $scope.inc = 0;
+
+        if ($scope.hasConfig === undefined) {
+          $location.path("/");
+          return;
+        }
 
         if ($scope.prevFlag[$scope.index] === 0) {
           $scope.selections[$scope.index].push({
@@ -12,7 +17,7 @@
             categoryId: $scope.surveys[$scope.index].categoryId,
             categoryName: "",
             comment: "",
-            answer: "",
+            answer: 0,
             storeId: 1
           });
           $scope.prevFlag[$scope.index] = 1;

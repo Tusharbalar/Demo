@@ -23,12 +23,12 @@
 .first ul li a span {
   width: 100%;
   cursor: pointer;
-  color: #002953;
+  color: #1B0244;
   font-size: 18px;
 }
 
 .first ul li a span:hover {
-  color: #68A4FF;
+  color: rgba(53, 68, 177, 0.96);;
 }
 
 .second {
@@ -70,4 +70,16 @@
   background: rgba(75, 93, 111, 0);
   border: none;
   margin: 20px;
+}
+
+.subCategoryLabel,
+.subCategoryLabel span {
+  text-align: center;
+  color: black;
+}
+
+.txtArea {
+  resize: none;
+  border: 1px solid black;
+  height: 100px !important;
 }

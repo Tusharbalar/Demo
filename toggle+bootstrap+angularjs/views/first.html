@@ -9,7 +9,7 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
       <form name="myForm">
         <div ng-repeat="item in surveys[index].optionCategoryItemDto" class="formStyle">
-          <label class="text-center">
+          <label class="text-center" style="cursor:pointer">
             <input type="radio" name="radio" id="{{item.itemId}}" ng-value="item.itemId" ng-model="selections[index][inc].answer" required>
               {{item.itemName}}
           </label>

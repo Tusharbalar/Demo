@@ -6,13 +6,18 @@
       
         $scope.inc = 0;
       
+        if ($scope.hasConfig === undefined) {
+          $location.path("/");
+          return;
+        }
+      
         if ($scope.prevFlag[$scope.index] === 0) {
           $scope.selections[$scope.index].push({
             questionId: $scope.surveys[$scope.index].questionId,
             categoryId: $scope.surveys[$scope.index].categoryId,
             categoryName: "",
             comment: "",
-            answer: "",
+            answer: 0,
             storeId: 1
           });
           $scope.prevFlag[$scope.index] = 1;

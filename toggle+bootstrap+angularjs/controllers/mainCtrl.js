@@ -9,7 +9,7 @@
       surveyService.getData(function(dataResponse) {
           
           $scope.surveys = dataResponse;
-
+          $scope.hasConfig = false;
           $scope.selections = [];
 
           /* create 2d array mannually */
@@ -44,6 +44,7 @@
                 categoryId: value.subCategoryId,
                 categoryName: value.subCategoryName,
                 storeId: 1,
+                answer: 0,
                 comment: ""
               });
             }
@@ -54,6 +55,7 @@
             $scope.hideSubmitButton = true;
             $scope.disableCheckbox = true;
             $scope.hideEditButton = true;
+            $scope.hasConfig = true;
             $location.path("/question/1");
           }
 

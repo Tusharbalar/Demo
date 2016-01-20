@@ -5,7 +5,12 @@
   app.controller("secondCtrl", ['$scope', "$location", "Data", function($scope, $location, Data) {
 
     $scope.inc = 0;
-
+    
+    if ($scope.hasConfig === undefined) {
+      $location.path("/");
+      return;
+    }
+    
     if ($scope.surveys[$scope.index] === undefined) return;
 
     if ($scope.surveys[$scope.index].category) {
@@ -28,7 +33,7 @@
             questionId: $scope.surveys[$scope.index].questionId,
             categoryId: value.categoryId,
             categoryName: value.categoryName,
-            answer: "",
+            answer: 0,
             storeId: 1,
             comment: ""
           });
